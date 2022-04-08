@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Snickles
+font link: https://www.fontsquirrel.com/fonts/Snickles
+font author: Tup Wanders
+font author site: http://www.tupwanders.nl/
+
+
+icon designer: Alfredo @ IconsAlfredo.com
+icon designer link: /AlfredoCreates
+        
+{"bg":"#ECE0E8","icon-gradient-0":"#1E0B36","icon-gradient-1":"#CA3782","font":"#230A1B","slogan":"#371e2f"}
+      

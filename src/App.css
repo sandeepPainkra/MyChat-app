@@ -1,39 +1,165 @@
-.App {
-  text-align: center;
+.header {
+  width: 100%;
+  height: 10vh;
+}
+.logo {
+  height: 50px;
+  width: fit-content;
+  border-radius: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.my_btn {
+  padding: 0.5rem 1.4rem !important;
+}
+.my_btn2 {
+  padding: 1rem !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.app_body {
+  width: 100%;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
+}
+.landingpage {
+  width: 100%;
+  height: 90vh;
+  background-color: aqua;
+  background-image: url("./Components//images/landing-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.landingContainer {
+  width: 900px;
+  padding: 2rem;
+  height: fit-content;
+}
+.landingContainer .landingPage_logo {
+  width: fit-content;
+  height: 60px;
+}
+.landingContainer h1 {
+  font-size: 5rem;
+}
+
+.chat {
+  flex: 1;
+  background-color: yellow;
+}
+
+.home_container {
+  width: 100%;
+  height: 90vh;
+  /* background-color: green; */
+  margin-top: 2.2rem;
+  box-shadow: -7px -50px 100px 100px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.sidebar {
+  min-width: 400px;
+  background-color: #fbfbfb;
+}
+.sidebar_header {
+  padding: 0.8rem 1rem;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  border-bottom: 1px solid #d2d1d1;
+}
+.sidebarHeader_left {
+  display: flex;
+  align-items: center;
+}
+.sidebarHeader_left h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 0.8rem;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.sidebar_search {
+  width: 70%;
+  background-color: rgb(210, 209, 209);
+  margin: 0.6rem auto;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+.sidebar_search input {
+  border: 0;
+  background: none;
+  outline: none;
+  margin-left: 0.8rem;
+}
+hr {
+  width: 100%;
+  height: 1px !important;
+  background-color: #cbcaca;
+  border: 0;
+  margin: 0;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.add_newChat {
+  text-align: center;
+  padding: 1rem;
+}
+.add_newChat:hover {
+  background-color: #cbcaca;
+  cursor: pointer;
+}
+.add_newChat h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+/* Chat room */
+
+.chatRoom {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.8rem 2rem;
+}
+.chat_rooms {
+  height: 495px;
+  overflow-y: scroll;
+}
+.chat_rooms::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.chat_rooms::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.chat_rooms::-webkit-scrollbar-thumb {
+  background-color: rgb(211, 211, 211);
+  border-radius: 2rem;
+}
+.chat_rooms .breadcrumb {
+  box-shadow: 0 !important;
+}
+.chatRoom:hover {
+  cursor: pointer;
+  background-color: #cbcaca;
+}
+.chatRoom span {
+  font-size: 2rem;
+  margin-right: 0.9rem;
+}
+.chatRoom h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.chatRoom h4 {
+  font-size: 0.7rem;
+  margin: 0;
+}
+.chatRoom p {
+  position: absolute;
+  right: 1.8rem;
+  bottom: 0.7rem;
 }
