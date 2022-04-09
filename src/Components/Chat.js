@@ -71,7 +71,7 @@ const Chat = () => {
       {/* Chat body starts here */}
 
       <div className="chat_body">
-        <FlipMove>
+        <FlipMove staggerDurationBy={30} duration={750} delay={30}>
           {messages.map((data, index) => {
             return (
               <Message
