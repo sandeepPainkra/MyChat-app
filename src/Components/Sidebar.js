@@ -6,9 +6,14 @@ import InfoIcon from "@material-ui/icons/Info";
 import React, { useEffect, useState } from "react";
 import ChatRoom from "./ChatRoom.js";
 import db from "./firebase.js";
+import { useDispatch, useSelector } from "react-redux";
+import { LogOut, selectUser } from "../features/userSlice.js";
+import { useNavigate } from "react-router-dom";
 const Sidebar = () => {
   const [rooms, setRooms] = useState([]);
-
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     db.collection("rooms")
       .orderBy("timestamp", "asc")
@@ -21,7 +26,6 @@ const Sidebar = () => {
         );
       });
   }, []);
-  console.log(rooms);
   const AddnewChat = () => {
     const roomName = prompt("Enter Room Name:");
     console.log(roomName);
@@ -32,12 +36,17 @@ const Sidebar = () => {
       });
     }
   };
+
+  const signOUT = () => {
+    dispatch(LogOut());
+    navigate("/");
+  };
   return (
     <div className="sidebar">
       <div className="sidebar_header">
         <div className="sidebarHeader_left">
-          <Avatar />
-          <h3>Rahul Singh</h3>
+          <Avatar src={user.photoURL} onClick={signOUT} />
+          <h3>{user.displayName}</h3>
         </div>
         <div className="sidebarHeader_right">
           <InfoIcon />
@@ -62,7 +71,11 @@ const Sidebar = () => {
       <div className="chat_rooms">
         {rooms.map((data, index) => {
           return (
-            <ChatRoom key={index} roomId={data.id} roomName={data.data.roomName} />
+            <ChatRoom
+              key={index}
+              roomId={data.id}
+              roomName={data.data.roomName}
+            />
           );
         })}
       </div>

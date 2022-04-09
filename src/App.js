@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header.js";
-import Chat from "./Components/Chat.js";
-import Sidebar from "./Components/Sidebar.js";
-import { Container } from "react-bootstrap";
 import Home from "./Components/Home.js";
 import Login from "./Components/Login.js";
 import LandingPage from "./Components/LandingPage.js";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { LogIn, selectUser } from "./features/userSlice";
+import { auth } from "./Components/firebase";
 
 function App() {
+  const user = useSelector(selectUser);
+  const dispatch=useDispatch()
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      dispatch(
+        LogIn({
+          displayName: authUser.displayName,
+          email: authUser.email,
+          photoURL: authUser.photoURL,
+        })
+      );
+    });
+  }, []);
+
   return (
     <div className="App">
       <Router>
