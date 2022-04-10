@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
    name: "user",
    initialState: {
-      user:[],
+      user:null,
    },
    reducers: {
       LogIn: (state, action) => {

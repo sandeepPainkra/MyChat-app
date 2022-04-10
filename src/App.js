@@ -4,14 +4,21 @@ import Header from "./Components/Header.js";
 import Home from "./Components/Home.js";
 import Login from "./Components/Login.js";
 import LandingPage from "./Components/LandingPage.js";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn, selectUser } from "./features/userSlice";
 import { auth } from "./Components/firebase";
 
 function App() {
   const user = useSelector(selectUser);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
+  
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
